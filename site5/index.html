@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lowband Studios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">LOWBAND</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">Studio</a>
+      <a href="#contact">Book</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a href="#services">Services</a>
+  <a href="#about">Studio</a>
+  <a href="#contact">Book</a>
+</div>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="waveform" aria-hidden="true">
+      <div class="bar" style="--h:38%;--d:0ms"></div>
+      <div class="bar" style="--h:68%;--d:60ms"></div>
+      <div class="bar" style="--h:52%;--d:120ms"></div>
+      <div class="bar" style="--h:90%;--d:180ms"></div>
+      <div class="bar" style="--h:44%;--d:240ms"></div>
+      <div class="bar" style="--h:78%;--d:300ms"></div>
+      <div class="bar" style="--h:33%;--d:360ms"></div>
+      <div class="bar" style="--h:95%;--d:420ms"></div>
+      <div class="bar" style="--h:58%;--d:480ms"></div>
+      <div class="bar" style="--h:72%;--d:540ms"></div>
+      <div class="bar" style="--h:48%;--d:600ms"></div>
+      <div class="bar" style="--h:83%;--d:660ms"></div>
+      <div class="bar" style="--h:29%;--d:720ms"></div>
+      <div class="bar" style="--h:63%;--d:780ms"></div>
+      <div class="bar" style="--h:41%;--d:840ms"></div>
+      <div class="bar" style="--h:76%;--d:900ms"></div>
+    </div>
+    <p class="eyebrow">Recording &nbsp;·&nbsp; Mixing &nbsp;·&nbsp; Mastering</p>
+    <h1 class="hero-title">Every track<br>begins in<br>the room.</h1>
+    <p class="hero-sub">Recording, mixing, and mastering for artists who won't settle for a sound that sounds like everyone else's.</p>
+    <a href="#contact" class="btn">Book your session</a>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-inner">
+    <p class="eyebrow reveal">What we offer</p>
+    <h2 class="section-title reveal">Built for serious work. Open to serious artists.</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card-meter" aria-hidden="true">
+          <div class="meter-bar" style="--fill:85%"></div>
+          <div class="meter-bar" style="--fill:70%"></div>
+          <div class="meter-bar" style="--fill:92%"></div>
+        </div>
+        <h3 class="card-title">Recording</h3>
+        <p class="card-desc">Neve 8078 console. Dedicated ISO booth, live room, and vocal booth. Hourly and full-day rates. No booking minimums.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card-meter" aria-hidden="true">
+          <div class="meter-bar" style="--fill:78%"></div>
+          <div class="meter-bar" style="--fill:95%"></div>
+          <div class="meter-bar" style="--fill:60%"></div>
+        </div>
+        <h3 class="card-title">Mixing</h3>
+        <p class="card-desc">Stems in, mix out. Two rounds of revisions included. We deliver within five business days or faster. No hidden fees.</p>
+      </article>
+      <article class="card reveal">
+        <div class="card-meter" aria-hidden="true">
+          <div class="meter-bar" style="--fill:100%"></div>
+          <div class="meter-bar" style="--fill:88%"></div>
+          <div class="meter-bar" style="--fill:76%"></div>
+        </div>
+        <h3 class="card-title">Mastering</h3>
+        <p class="card-desc">Streaming-optimized loudness. ISRC codes on request. Delivered in WAV and MP3. Analog chain available on request.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-inner">
+      <div class="about-text reveal">
+        <p class="eyebrow">The Room</p>
+        <h2 class="section-title">We built this studio for one reason: because it didn't exist yet.</h2>
+        <p class="body-text">Lowband opened in 2021 as a reaction to home recording culture. Not because home recording is bad — but because some things need a room. A real room, with air and physics and a board that doesn't simulate anything. If you can hear the difference, this is where you come.</p>
+        <a href="#contact" class="btn">Book a tour</a>
+      </div>
+      <div class="about-visual reveal" aria-hidden="true">
+        <div class="freq-display">
+          <span class="freq-num">44.1</span>
+          <span class="freq-unit">kHz</span>
+          <span class="freq-label">Sample Rate</span>
+        </div>
+        <div class="freq-display">
+          <span class="freq-num">32</span>
+          <span class="freq-unit">bit</span>
+          <span class="freq-label">Bit Depth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="section-inner">
+    <div class="cta-inner reveal">
+      <h2 class="cta-title">Sessions available this week.</h2>
+      <a href="mailto:book@lowbandstudios.com" class="btn">book@lowbandstudios.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo">LOWBAND</span>
+    <span class="footer-copy">&copy; 2026 Lowband Studios</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

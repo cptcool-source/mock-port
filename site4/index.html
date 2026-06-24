@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coquille</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Coquille</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Menu</a>
+      <a href="#about">Story</a>
+      <a href="#contact">Reserve</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <a href="#services">Menu</a>
+  <a href="#about">Story</a>
+  <a href="#contact">Reserve</a>
+</div>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <p class="eyebrow">Modern Coastal Cuisine &nbsp;·&nbsp; Gulf Coast, Florida</p>
+    <h1 class="hero-title"><em>A table,<br>a season,<br>a reason.</em></h1>
+    <p class="hero-sub">Reservations required. Menu changes weekly. Whatever the Gulf brings us — that's what we're cooking.</p>
+    <a href="#contact" class="btn">Reserve your table</a>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-inner">
+    <p class="eyebrow reveal">Experiences</p>
+    <h2 class="section-title reveal"><em>Three ways to dine at Coquille.</em></h2>
+    <div class="cards">
+      <article class="card reveal">
+        <h3 class="card-title">À la Carte</h3>
+        <div class="card-rule" aria-hidden="true"></div>
+        <p class="card-desc">Seasonal menu built around what the Gulf is offering this week. Changes frequently. Not suitable for those who need certainty.</p>
+        <p class="card-note">Tues – Sun, from 5 pm</p>
+      </article>
+      <article class="card reveal">
+        <h3 class="card-title">Private Dining</h3>
+        <div class="card-rule" aria-hidden="true"></div>
+        <p class="card-desc">The private room seats twelve. Available for dinners, tastings, and occasions worth celebrating properly.</p>
+        <p class="card-note">By arrangement</p>
+      </article>
+      <article class="card reveal">
+        <h3 class="card-title">Chef's Table</h3>
+        <div class="card-rule" aria-hidden="true"></div>
+        <p class="card-desc">Six courses, chef's selection, the kitchen counter. You don't choose. We deliver. Available Thursday through Saturday.</p>
+        <p class="card-note">Thu – Sat, 7 pm seating</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-inner reveal">
+      <div class="about-rule" aria-hidden="true"></div>
+      <blockquote class="about-quote">"The Gulf has been feeding this coast for thousands of years. We just try to get out of the way."</blockquote>
+      <p class="about-attr">— Chef Marisol Rios, Executive Chef &amp; Co-founder</p>
+      <div class="about-rule" aria-hidden="true"></div>
+      <p class="body-text">Coquille opened in 2019 with one rule: nothing frozen, nothing shipped in from somewhere else. We source from nine farms within forty miles and two boats we've worked with since day one. The menu is a direct result of what we find at the dock each morning.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="section-inner">
+    <div class="cta-inner reveal">
+      <h2 class="cta-title"><em>Your table is waiting.</em></h2>
+      <p class="cta-sub">Reservations open 30 days in advance. Walk-ins accommodated at the bar when possible.</p>
+      <a href="mailto:reservations@coquille.com" class="btn">reservations@coquille.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-logo"><em>Coquille</em></span>
+    <span class="footer-copy">&copy; 2026 Coquille Restaurant &nbsp;·&nbsp; Gulf Coast, FL</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
