@@ -112,17 +112,24 @@ section { padding: clamp(72px,9vh,112px) 0; }
 /* ── Hero ───────────────────────────────────────────────── */
 .hero {
   min-height: 100vh; display: flex; align-items: center;
-  padding-top: 68px; background: var(--bg);
+  padding-top: 68px;
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(201,169,110,0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 .hero-inner { max-width: var(--max); margin: 0 auto; padding: 80px clamp(20px,5vw,56px); }
 
-.hero-rule { border: none; height: 1px; background: var(--gold-dim); margin: 18px 0; }
+.hero-rule {
+  border: none; height: 1px; background: var(--gold-dim); margin: 18px 0;
+  transform-origin: left center;
+}
 
 .hero-title {
   font-family: 'Libre Baskerville', serif; font-weight: 700;
-  font-size: clamp(52px,8vw,108px); line-height: 0.95;
+  font-size: clamp(52px,8vw,108px); line-height: 1.02;
   color: var(--navy); margin: 24px 0 0;
 }
+.hero-line { display: block; }
 .hero-sub {
   font-size: clamp(15px,1.5vw,18px); font-weight: 300; color: var(--muted);
   max-width: 480px; line-height: 1.8; margin-top: 28px;
@@ -309,3 +316,67 @@ hr.cta-rule:last-child { margin-top: 48px; margin-bottom: 0; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ── Hero entrance — orchestrated top-to-bottom ────────────
+   Designed timing: eyebrow → rule-draw → title cascade →
+   rule-draw-rtl → sub → buttons → stats.
+   Each element has a specific role in the sequence.        */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes ruleDraw {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+.hero .eyebrow { animation: heroFadeUp 0.55s var(--ease) 0.05s both; }
+
+.hero .hero-rule:first-of-type {
+  animation: ruleDraw 0.5s var(--ease) 0.2s both;
+  transform-origin: left center;
+}
+.hero .hero-rule:last-of-type {
+  animation: ruleDraw 0.5s var(--ease) 0.58s both;
+  transform-origin: right center;
+}
+
+.hero-title .hero-line:nth-child(1) { animation: heroFadeUp 0.7s var(--ease) 0.28s both; }
+.hero-title .hero-line:nth-child(2) { animation: heroFadeUp 0.7s var(--ease) 0.40s both; }
+.hero-title .hero-line:nth-child(3) { animation: heroFadeUp 0.7s var(--ease) 0.52s both; }
+
+.hero .hero-sub    { animation: heroFadeUp 0.65s var(--ease) 0.68s both; }
+.hero .hero-btns   { animation: heroFadeUp 0.6s  var(--ease) 0.82s both; }
+.hero .stats-strip { animation: heroFadeUp 0.65s var(--ease) 0.96s both; }
+
+/* ── Scroll reveal stagger — steps ─────────────────────── */
+.steps .step:nth-child(2) { transition-delay: 130ms; }
+.steps .step:nth-child(3) { transition-delay: 260ms; }
+
+/* ── Scroll reveal stagger — features (row by row) ─────── */
+.features-grid .feature:nth-child(n+3):nth-child(-n+4) { transition-delay: 80ms; }
+.features-grid .feature:nth-child(n+5):nth-child(-n+6) { transition-delay: 160ms; }
+.features-grid .feature:nth-child(n+7)                 { transition-delay: 240ms; }
+
+/* ── Scroll reveal stagger — pricing cards ──────────────── */
+.pricing-cards .pricing-card:nth-child(2) { transition-delay: 160ms; }
+.pricing-cards .pricing-card:nth-child(3) { transition-delay: 320ms; }
+
+/* ── Testimonials — slide from left instead of up ───────── */
+.testimonial.reveal { transform: translateX(-20px); }
+
+/* ── Interaction polish ─────────────────────────────────── */
+.step-num { transition: color 0.25s; }
+.step:hover .step-num { color: var(--navy); }
+
+.feature-check { transition: color 0.2s; }
+.feature:hover .feature-check { color: var(--navy); }
+
+.pricing-card--featured:hover { box-shadow: 0 8px 48px rgba(28,43,74,0.14); }
+
+/* ── Focus visible — keyboard navigation ─────────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
