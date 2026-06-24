@@ -32,4 +32,33 @@
   } else {
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function animateCounter(el, target, duration) {
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.round(easeOutCubic(progress) * target);
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var statNums = document.querySelectorAll('.stat-num[data-target]');
+  if ('IntersectionObserver' in window && statNums.length) {
+    var statObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          var target = parseInt(e.target.getAttribute('data-target'), 10);
+          animateCounter(e.target, target, 1400);
+          statObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    statNums.forEach(function (el) { statObs.observe(el); });
+  } else {
+    statNums.forEach(function (el) { el.textContent = el.getAttribute('data-target'); });
+  }
 })();

@@ -32,4 +32,19 @@
   } else {
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
+
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = this.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-question').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.style.maxHeight = null;
+      });
+      if (!expanded) {
+        this.setAttribute('aria-expanded', 'true');
+        var answer = this.nextElementSibling;
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
 })();
